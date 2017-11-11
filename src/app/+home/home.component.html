@@ -1,0 +1,54 @@
+<div id="content">
+    <div class="row">
+        <sa-big-breadcrumbs [items]="['Home']" icon="home"
+                            class="col-xs-12 col-sm-7 col-md-7 col-lg-4"></sa-big-breadcrumbs>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <!--
+                <button type="button" class="btn btn-primary"  style="margin-left: 14px; margin-top:8px" *ngIf="!auth.isAuthenticated()" (click)="auth.login()"> Log In </button>
+                <button type="button" class="btn btn-primary"  style="margin-left: 14px; margin-top:8px" *ngIf="auth.isAuthenticated()" (click)="auth.logout()"> Log Out </button>
+            -->
+            <div  class="well">
+
+                <h1>Electrisim</h1>
+                <p>Calculation of load-flow for electrical systems.</p>
+            </div>
+            <!--
+            <sa-tree-view></sa-tree-view>
+            -->
+
+            <sa-widget [editbutton]="false" color="blue">
+                <!-- widget options:
+                usage: <sa-widget id="wid-id-0" [editbutton]="false">
+                [colorbutton]="false"
+                [editbutton]="false"
+                [togglebutton]="false"
+                [deletebutton]="false"
+                [fullscreenbutton]="false"
+                [custombutton]="false"
+                [collapsed]="true"
+                [sortable]="false"
+                -->
+                <header>
+                  <span class="widget-icon"> <i class="fa fa-sitemap"></i> </span>
+                  <h2>Projects</h2>
+                </header>
+                <!-- widget div-->
+                <div>            <!-- widget content -->
+                  <div class="widget-body">
+                    <div class="tree smart-form">
+                      <sa-tree-view [items]="demo2" (change)="changeLstener($event)"></sa-tree-view>
+                    </div>
+                  </div>
+                  <!-- end widget content -->
+                </div>
+                <!-- end widget div -->
+              </sa-widget>
+              <!-- end widget -->
+        
+        
+        
+        </div>
+    </div>
+</div>
