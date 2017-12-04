@@ -11,11 +11,27 @@ namespace lite.Models
         {
             context.Database.EnsureCreated();
 
+
+            
+
             // Look for any students.
             if (context.ExternalGrids.Any() || context.OverheadLines.Any() || context.TwoPhaseTransformers.Any())
             {
                 return;   // DB has been seeded
             }
+
+            var projects = new Project[]
+            {
+                 new Project{Name="Project1"},
+                 new Project{Name="Project2"},
+                 new Project{Name="Project3"},                
+            };
+
+            foreach (Project s in projects)
+            {
+                context.Projects.Add(s);
+            }
+            context.SaveChanges();
 
             var twophasetransformers = new TwoPhaseTransformer[]
             {
@@ -30,8 +46,8 @@ namespace lite.Models
             var externalgrids = new ExternalGrid[]
             {
                  new ExternalGrid{Name="ExtGrid1", NodeNo=0, NodeType="SL", VoltageAngle=0, VoltageSetpoint=1 },
-                 new ExternalGrid{Name="ExtGrid2", NodeNo=1, NodeType="PV", VoltageAngle=0, VoltageSetpoint=1, ActivePower=60 },
-                 new ExternalGrid{Name="ExtGrid2", NodeNo=2, NodeType="PQ", VoltageAngle=0, ActivePower=-80, ReactivePower = -60 }
+                 new ExternalGrid{Name="ExtGrid2", NodeNo=1, NodeType="PV", VoltageAngle=0, VoltageSetpoint=1, ActivePower=60},
+                 new ExternalGrid{Name="ExtGrid2", NodeNo=2, NodeType="PQ", VoltageAngle=0, ActivePower=-80, ReactivePower = -60}
             };
 
             foreach (ExternalGrid s in externalgrids)
@@ -52,6 +68,8 @@ namespace lite.Models
                 context.OverheadLines.Add(s);
             }
             context.SaveChanges();
+
+       
         }
     }
 }

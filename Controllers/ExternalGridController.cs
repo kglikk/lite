@@ -15,7 +15,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace lite.Controllers
 {
     //[Produces("application/json")]
-    [Route("api/[controller]")]
+    [Route("api/[controller]")] 
     
     public class ExternalGridController : Controller
     {
@@ -28,11 +28,24 @@ namespace lite.Controllers
 
         // GET: api/values
         [HttpGet("[action]")]
-        //[Authorize]
-              
+        //[Authorize] 
+               
         public IEnumerable<ExternalGrid> Get()
         {
             return _context.ExternalGrids;
+        } 
+
+
+        // GET: api/values
+        // [HttpGet("{id}")]
+        //[HttpGet("[action]")]
+        //[Authorize]  
+        [HttpGet("[action]/{id}")]            
+        public IActionResult GetBasedOnProject([FromRoute] int id) // [FromRoute] int projectid [FromRoute] 
+        {             
+            var item = _context.ExternalGrids.Where(e => e.ProjectId == id);            
+            return new ObjectResult(item);     
+           
         }
 
         // POST: api/StudentMastersAPI  

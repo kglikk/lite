@@ -1,4 +1,6 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { ProjectService } from './../../services/project.service';
+import { ShowDataService } from 'app/services/show-data.service';
+import { Component, OnInit } from '@angular/core';
 import { FadeInTop } from "../../shared/animations/fade-in-top.decorator";
 
 import { Http, Headers } from "@angular/http";
@@ -16,23 +18,42 @@ export class ExternalGridsComponent implements OnInit {
 
   gridOptions: GridOptions;
   rowData: any[];
+  // @Inject('BASE_URL') baseUrl: string;
+  show: boolean;
+  name: string;
+  projectId: number;
 
-  constructor(public http: Http, @Inject('BASE_URL')  baseUrl: string) {
+  constructor(public http: Http, public showData: ShowDataService, public projectService: ProjectService) {
+
+    //czy pokazywać dane czy nie w zależności od tego czy projekt jest otwarty
+    this.showData.currentShow.subscribe(show => this.show = show);
+
+    //this.projectService.currentProjectName.subscribe(name => this.name = name)
+    
+    //obserwuj ID projektu, który jest otwarty, żeby na tej podstawie wczytywać dane
+    this.projectService.currentProjectId.subscribe(projectId => this.projectId = projectId)
+    let projectIdInside = this.projectId;
     // we pass an empty gridOptions in, so we can grab the api out
     this.gridOptions = <GridOptions>{
+
       onGridReady: () => {
         this.gridOptions.api.sizeColumnsToFit(); //make the currently visible columns fit the screen.
       },
     };
 
     this.gridOptions = {
+
       onCellValueChanged: function (event) {
         //jeśli zmieniona wartość jest ok 
         console.log("onCellValueChanged");
         var headers = new Headers();
         headers.append('Content-Type', 'application/json; charset=utf-8');
-        http.put(baseUrl + 'api/ExternalGrid/' + event.data.id, JSON.stringify({ ID: event.data.id, Name: event.data.name, NodeNo: event.data.nodeNo, NodeType: event.data.nodeType, VoltageAngle: event.data.voltageAngle, VoltageSetpoint: event.data.voltageSetpoint, ActivePower: event.data.activePower, ReactivePower: event.data.reactivePower }), { headers: headers }).subscribe();
+        //this.baseUrl + 
+        
+        http.put('api/ExternalGrid/' + event.data.id, JSON.stringify({ ID: event.data.id, Name: event.data.name, NodeNo: event.data.nodeNo, NodeType: event.data.nodeType, VoltageAngle: event.data.voltageAngle, VoltageSetpoint: event.data.voltageSetpoint, ActivePower: event.data.activePower, ReactivePower: event.data.reactivePower, ProjectId: projectIdInside }), { headers: headers }).subscribe();
       },
+
+
       onCellEditingStopped: () => {
         console.log("onCellEditingStopped");
       },
@@ -98,15 +119,28 @@ export class ExternalGridsComponent implements OnInit {
       },
     }
 
-    //wczytaj dane z bazy danych
-    this.http.get(baseUrl + 'api/ExternalGrid/Get').subscribe(result => {
-      this.rowData = result.json();
-    });
+    //wczytaj dane z bazy danych bazując na nazwie projektu
+   
+    http.get('api/ExternalGrid/GetBasedOnProject/' + this.projectId).subscribe(
+      result => { this.rowData = result.json(); console.log('this.rowData:' + this.rowData) },
+    );
 
+
+    /*
+    this.http.get('api/ExternalGrid/Get').subscribe(
+      result => { this.rowData = result.json(); },      
+    ); */
 
   }
 
+  
 
+  ngOnInit() {
+
+    //gdy wstawiam tutaj dane z konstruktora mam problem z http.put - this. ...
+
+
+  }
 
   //sprawdzanie czy wprowadzona liczba do tabeli jest liczbą
   numberValueFormatter(params) {
@@ -160,6 +194,7 @@ export class ExternalGridsComponent implements OnInit {
     }
   }
 
+
   removeSelected() {
 
     if (window.confirm('Are you sure you want to delete?')) {
@@ -195,28 +230,29 @@ export class ExternalGridsComponent implements OnInit {
       voltageAngle: 0,
       voltageSetpoint: 0,
       activePower: 0,
-      reactivePower: 0
+      reactivePower: 0,
+      //projectId: 2
+
     };
     var headers = new Headers();
     headers.append('Content-Type', 'application/json; charset=utf-8');
-    this.http.post('api/ExternalGrid', JSON.stringify({ ID: 0, Name: newItem.name, NodeNo: newItem.nodeNo, NodeType: newItem.nodeType, VoltageAngle: newItem.voltageAngle, VoltageSetpoint: newItem.voltageSetpoint, ActivePower: newItem.activePower, ReactivePower: newItem.reactivePower }), { headers: headers }).subscribe((data: Object) => {
+    this.http.post('api/ExternalGrid', JSON.stringify({ ID: 0, Name: newItem.name, NodeNo: newItem.nodeNo, NodeType: newItem.nodeType, VoltageAngle: newItem.voltageAngle, VoltageSetpoint: newItem.voltageSetpoint, ActivePower: newItem.activePower, ReactivePower: newItem.reactivePower, ProjectId: this.projectId }), { headers: headers }).subscribe((data: Object) => {
       //Czekamy na wykonanie sie POST, zeby zrobic GET i WPISAC dane do tabeli we front end
 
-      // po operacji post ustawiany jest specyficzny ID w bazie SQL, aby dany wiersz w fron-end miał taki sam ID, musze sciagnac te dane do frontendu    
-      this.http.get('api/ExternalGrid/Get').subscribe(result => {
+      // po operacji post ustawiany jest specyficzny ID w bazie SQL, aby dany wiersz w front-end miał taki sam ID, musze sciagnac te dane do frontendu    
+      /*this.http.get('api/ExternalGrid/Get').subscribe(result => {
         this.rowData = result.json();
-      })
+      })*/
+
+      this.http.get('api/ExternalGrid/GetBasedOnProject/' + this.projectId).subscribe(
+        result => { this.rowData = result.json(); },
+      );
 
       var res = this.gridOptions.api.updateRowData({ add: [newItem] });
       this.printResult(res);
     });
-  }   
-
-    ngOnInit() {
-    }
-
   }
-
+}
 
 export interface ExternalGrids {
   id: number;
@@ -227,4 +263,5 @@ export interface ExternalGrids {
   voltageSetpoint: number;
   activePower: number;
   reactivePower: number;
+  projectId: number
 }

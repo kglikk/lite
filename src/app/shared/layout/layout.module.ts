@@ -1,6 +1,5 @@
 
 
-
 import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
@@ -21,6 +20,7 @@ import { RouteBreadcrumbsComponent } from './ribbon/route-breadcrumbs.component'
 import {UtilsModule} from "../utils/utils.module";
 import { DataModule } from './../../+data/data.module';
 import { CalculationModule } from './../../+calculation/calculation.module';
+
 
 //import { AuthService } from './../../services/auth.service';
 
@@ -53,7 +53,7 @@ import { CalculationModule } from './../../+calculation/calculation.module';
     RouteBreadcrumbsComponent,
   ],
   providers: [
-   // AuthService,
+    
   ],
   exports:[
     HeaderModule,

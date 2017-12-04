@@ -97,8 +97,7 @@ namespace lite
                     */
 
                     // Catch all Route - catches anything not caught be other routes
-                    
-                     
+                                        
                     routes.MapRoute(
                         name: "catch-all",
                         template: "{*url}",

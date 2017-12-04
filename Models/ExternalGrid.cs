@@ -9,7 +9,7 @@ namespace lite.Models
 {
     public class ExternalGrid
     {
-        [Key]
+        
         public int ID { get; set; }
 
         [Required]
@@ -41,5 +41,11 @@ namespace lite.Models
 
         [Display(Name = "Reactive power [MVAr]")]
         public double? ReactivePower { get; set; }
+        
+        public Project Project {get;set;}        
+
+       public int? ProjectId {get;set;} 
+
+       // public string ProjectName {get;set;}   
     }
 }

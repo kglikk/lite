@@ -1,6 +1,13 @@
 <div class="project-context hidden-xs dropdown" dropdown>
 
-  <span class="label">{{ 'Projects' | i18n }}:</span>
+  <span class="label">{{ 'Project Name' | i18n }}:</span>
+  <span> {{name}} {{id}} </span>
+
+  <!-- 
+  <button (click)="newMessage()">New Message</button>
+  -->
+  
+  <!-- 
     <span class="project-selector dropdown-toggle" dropdownToggle>{{'Recent projects'| i18n}} <i ng-if="projects.length"
                                                                                                             class="fa fa-angle-down"></i></span>
 
@@ -13,5 +20,7 @@
       <a (click)="clearProjects()"><i class="fa fa-power-off"></i> Clear</a>
     </li>
   </ul>
+
+-->
 
 </div>

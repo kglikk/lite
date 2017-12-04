@@ -1,6 +1,9 @@
+import { AuthService } from './../services/auth/auth.service';
 import { JsonApiService } from './../core/api/json-api.service';
-import { AuthService } from './../services/auth.service';
-import { Component, OnInit } from '@angular/core';
+
+import { Component, OnInit, Inject } from '@angular/core';
+
+
 
 @Component({
   selector: 'app-home',
@@ -12,7 +15,7 @@ export class HomeComponent implements OnInit {
   public demo1:any;
   public demo2:any;
   
-  constructor(private jsonApiService:JsonApiService) { 
+  constructor(private jsonApiService:JsonApiService, private auth: AuthService) { //
     
   }
 
@@ -22,5 +25,9 @@ export class HomeComponent implements OnInit {
       this.demo2 = data.demo2;
     })
   }
+  
+
+
+  
 
 }

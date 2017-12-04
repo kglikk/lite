@@ -40,7 +40,7 @@ var ExternalGridsRoutingModule = (function () {
 /***/ "./src/app/+data/externalgrids/externalgrids.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- MAIN CONTENT -->\n<div id=\"content\">\n\n  <div class=\"row\">\n    <sa-big-breadcrumbs [items]=\"['Data', 'External Grids']\" icon=\"table\" class=\"col-xs-12 col-sm-7 col-md-7 col-lg-4\"></sa-big-breadcrumbs>\n    <!-- <sa-stats></sa-stats> -->\n  </div>\n  <div class=\"row\">\n    <div class='col-sm-12' style=\"margin-top: 10px; margin-bottom: 10px\">\n        <button type=\"button\" class=\"btn btn-primary\" (click)=onAddRow()>Add Row</button>\n        <button type=\"button\" class=\"btn btn-danger\" (click)=removeSelected()>Delete selected</button>\n    </div>\n  </div>\n\n  <!-- widget grid -->\n  <sa-widgets-grid>\n\n\n    <div class=\"row\">\n      <article class=\"col-sm-12\">\n        <sa-widget [editbutton]=\"false\" color=\"darken\">\n          <header>\n            <span class=\"widget-icon\">\n              <i class=\"fa fa-table\"></i>\n            </span>\n\n            <h2>External Grids</h2>\n          </header>\n          <div>\n            <div class=\"widget-body no-padding\">\n              <!-- <alert type=\"info\" class=\"no-margin fade in\" dismisser=\"\"> \n                <i class=\"fa-fw fa fa-info\"></i>\n                Adds zebra-striping to table row within <code>&lt;table&gt;</code> by adding the <code>.table-striped</code>\n                with the base class\n              </alert>\n              -->\n              <div class=\"table-responsive\" style=\"width: 100%; height: 500px;\">\n                  <ag-grid-angular #agGrid style=\"width: 100%;height: 100%;\" class=\"ag-fresh\" [gridOptions]=\"gridOptions\" [rowData]=\"rowData\"> \n                    <!--  [columnDefs]=\"columnDefs\" [defaultColDef]=\"defaultColDef\" -->\n              </ag-grid-angular>\n\n               \n\n              </div>\n\n            </div>\n          </div>\n        </sa-widget>\n\n      </article>\n\n\n    </div>\n  \n  </sa-widgets-grid>\n</div>"
+module.exports = "<!-- MAIN CONTENT -->\n<div *ngIf=\"show;else otherContent\" id=\"content\">\n\n  <div class=\"row\">\n    <sa-big-breadcrumbs [items]=\"['Data', 'External Grids']\" icon=\"table\" class=\"col-xs-12 col-sm-7 col-md-7 col-lg-4\"></sa-big-breadcrumbs>\n    <!-- <sa-stats></sa-stats> -->\n  </div>\n  <div class=\"row\">\n    <div class='col-sm-12' style=\"margin-top: 10px; margin-bottom: 10px\">\n        <button type=\"button\" class=\"btn btn-primary\" (click)=onAddRow()>Add Row</button>\n        <button type=\"button\" class=\"btn btn-danger\" (click)=removeSelected()>Delete selected</button>\n    </div>\n  </div>\n\n  <!-- widget grid -->\n  <sa-widgets-grid>\n\n\n    <div class=\"row\">\n      <article class=\"col-sm-12\">\n        <sa-widget [editbutton]=\"false\" color=\"darken\">\n          <header>\n            <span class=\"widget-icon\">\n              <i class=\"fa fa-table\"></i>\n            </span>\n\n            <h2>External Grids</h2>\n          </header>\n          <div>\n            <div class=\"widget-body no-padding\">\n              <!-- <alert type=\"info\" class=\"no-margin fade in\" dismisser=\"\"> \n                <i class=\"fa-fw fa fa-info\"></i>\n                Adds zebra-striping to table row within <code>&lt;table&gt;</code> by adding the <code>.table-striped</code>\n                with the base class\n              </alert>\n              -->\n              <div class=\"table-responsive\" style=\"width: 100%; height: 500px;\">\n                  <ag-grid-angular #agGrid style=\"width: 100%;height: 100%;\" class=\"ag-fresh\" [gridOptions]=\"gridOptions\" [rowData]=\"rowData\"> \n                    <!--  [columnDefs]=\"columnDefs\" [defaultColDef]=\"defaultColDef\" -->\n              </ag-grid-angular>\n\n               \n\n              </div>\n\n            </div>\n          </div>\n        </sa-widget>\n\n      </article>\n\n\n    </div>\n  \n  </sa-widgets-grid>\n</div>\n\n<ng-template #otherContent>Please open or create project in the Home tab first</ng-template>"
 
 /***/ }),
 
@@ -48,9 +48,11 @@ module.exports = "<!-- MAIN CONTENT -->\n<div id=\"content\">\n\n  <div class=\"
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_animations_fade_in_top_decorator__ = __webpack_require__("./src/app/shared/animations/fade-in-top.decorator.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__("./node_modules/@angular/http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_project_service__ = __webpack_require__("./src/app/services/project.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_app_services_show_data_service__ = __webpack_require__("./src/app/services/show-data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_animations_fade_in_top_decorator__ = __webpack_require__("./src/app/shared/animations/fade-in-top.decorator.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__("./node_modules/@angular/http/@angular/http.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ExternalGridsComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -61,17 +63,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
+
+
 
 
 
 var ExternalGridsComponent = (function () {
-    function ExternalGridsComponent(http, baseUrl) {
+    function ExternalGridsComponent(http, showData, projectService) {
         var _this = this;
         this.http = http;
+        this.showData = showData;
+        this.projectService = projectService;
         this.externalgrid = [];
+        //czy pokazywać dane czy nie w zależności od tego czy projekt jest otwarty
+        this.showData.currentShow.subscribe(function (show) { return _this.show = show; });
+        //this.projectService.currentProjectName.subscribe(name => this.name = name)
+        //obserwuj ID projektu, który jest otwarty, żeby na tej podstawie wczytywać dane
+        this.projectService.currentProjectId.subscribe(function (projectId) { return _this.projectId = projectId; });
+        var projectIdInside = this.projectId;
         // we pass an empty gridOptions in, so we can grab the api out
         this.gridOptions = {
             onGridReady: function () {
@@ -82,9 +91,10 @@ var ExternalGridsComponent = (function () {
             onCellValueChanged: function (event) {
                 //jeśli zmieniona wartość jest ok 
                 console.log("onCellValueChanged");
-                var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["c" /* Headers */]();
+                var headers = new __WEBPACK_IMPORTED_MODULE_4__angular_http__["c" /* Headers */]();
                 headers.append('Content-Type', 'application/json; charset=utf-8');
-                http.put(baseUrl + 'api/ExternalGrid/' + event.data.id, JSON.stringify({ ID: event.data.id, Name: event.data.name, NodeNo: event.data.nodeNo, NodeType: event.data.nodeType, VoltageAngle: event.data.voltageAngle, VoltageSetpoint: event.data.voltageSetpoint, ActivePower: event.data.activePower, ReactivePower: event.data.reactivePower }), { headers: headers }).subscribe();
+                //this.baseUrl + 
+                http.put('api/ExternalGrid/' + event.data.id, JSON.stringify({ ID: event.data.id, Name: event.data.name, NodeNo: event.data.nodeNo, NodeType: event.data.nodeType, VoltageAngle: event.data.voltageAngle, VoltageSetpoint: event.data.voltageSetpoint, ActivePower: event.data.activePower, ReactivePower: event.data.reactivePower, ProjectId: projectIdInside }), { headers: headers }).subscribe();
             },
             onCellEditingStopped: function () {
                 console.log("onCellEditingStopped");
@@ -149,11 +159,16 @@ var ExternalGridsComponent = (function () {
                 filter: 'text'
             },
         };
-        //wczytaj dane z bazy danych
-        this.http.get(baseUrl + 'api/ExternalGrid/Get').subscribe(function (result) {
-            _this.rowData = result.json();
-        });
+        //wczytaj dane z bazy danych bazując na nazwie projektu
+        http.get('api/ExternalGrid/GetBasedOnProject/' + this.projectId).subscribe(function (result) { _this.rowData = result.json(); console.log('this.rowData:' + _this.rowData); });
+        /*
+        this.http.get('api/ExternalGrid/Get').subscribe(
+          result => { this.rowData = result.json(); },
+        ); */
     }
+    ExternalGridsComponent.prototype.ngOnInit = function () {
+        //gdy wstawiam tutaj dane z konstruktora mam problem z http.put - this. ...
+    };
     //sprawdzanie czy wprowadzona liczba do tabeli jest liczbą
     ExternalGridsComponent.prototype.numberValueFormatter = function (params) {
         if (isNaN(Number(params.value))) {
@@ -216,7 +231,7 @@ var ExternalGridsComponent = (function () {
             var res = this.gridOptions.api.updateRowData({ remove: selectedData });
             this.printResult(res);
             //back-end
-            var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["c" /* Headers */]();
+            var headers = new __WEBPACK_IMPORTED_MODULE_4__angular_http__["c" /* Headers */]();
             headers.append('Content-Type', 'application/json; charset=utf-8');
             for (var rowId = 0; rowId < rowIdArray_1.length; rowId++) {
                 this.http.delete('api/ExternalGrid/' + rowIdArray_1[rowId], { headers: headers }).subscribe();
@@ -234,33 +249,31 @@ var ExternalGridsComponent = (function () {
             voltageAngle: 0,
             voltageSetpoint: 0,
             activePower: 0,
-            reactivePower: 0
+            reactivePower: 0,
         };
-        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["c" /* Headers */]();
+        var headers = new __WEBPACK_IMPORTED_MODULE_4__angular_http__["c" /* Headers */]();
         headers.append('Content-Type', 'application/json; charset=utf-8');
-        this.http.post('api/ExternalGrid', JSON.stringify({ ID: 0, Name: newItem.name, NodeNo: newItem.nodeNo, NodeType: newItem.nodeType, VoltageAngle: newItem.voltageAngle, VoltageSetpoint: newItem.voltageSetpoint, ActivePower: newItem.activePower, ReactivePower: newItem.reactivePower }), { headers: headers }).subscribe(function (data) {
+        this.http.post('api/ExternalGrid', JSON.stringify({ ID: 0, Name: newItem.name, NodeNo: newItem.nodeNo, NodeType: newItem.nodeType, VoltageAngle: newItem.voltageAngle, VoltageSetpoint: newItem.voltageSetpoint, ActivePower: newItem.activePower, ReactivePower: newItem.reactivePower, ProjectId: this.projectId }), { headers: headers }).subscribe(function (data) {
             //Czekamy na wykonanie sie POST, zeby zrobic GET i WPISAC dane do tabeli we front end
-            // po operacji post ustawiany jest specyficzny ID w bazie SQL, aby dany wiersz w fron-end miał taki sam ID, musze sciagnac te dane do frontendu    
-            _this.http.get('api/ExternalGrid/Get').subscribe(function (result) {
-                _this.rowData = result.json();
-            });
+            // po operacji post ustawiany jest specyficzny ID w bazie SQL, aby dany wiersz w front-end miał taki sam ID, musze sciagnac te dane do frontendu    
+            /*this.http.get('api/ExternalGrid/Get').subscribe(result => {
+              this.rowData = result.json();
+            })*/
+            _this.http.get('api/ExternalGrid/GetBasedOnProject/' + _this.projectId).subscribe(function (result) { _this.rowData = result.json(); });
             var res = _this.gridOptions.api.updateRowData({ add: [newItem] });
             _this.printResult(res);
         });
     };
-    ExternalGridsComponent.prototype.ngOnInit = function () {
-    };
     ExternalGridsComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__shared_animations_fade_in_top_decorator__["a" /* FadeInTop */])(),
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_animations_fade_in_top_decorator__["a" /* FadeInTop */])(),
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
             //selector: 'sa-external-grids',
             template: __webpack_require__("./src/app/+data/externalgrids/externalgrids.component.html"),
         }),
-        __param(1, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"])('BASE_URL')),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _a || Object, String])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_app_services_show_data_service__["a" /* ShowDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_app_services_show_data_service__["a" /* ShowDataService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__services_project_service__["a" /* ProjectService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_project_service__["a" /* ProjectService */]) === "function" && _c || Object])
     ], ExternalGridsComponent);
     return ExternalGridsComponent;
-    var _a;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=externalgrids.component.js.map

@@ -1,3 +1,5 @@
+
+import { ShowDataService } from './../../../services/show-data.service';
 import {
   Directive, ElementRef, OnInit,
   AfterContentInit
@@ -17,16 +19,20 @@ export class SmartMenuDirective implements OnInit, AfterContentInit {
   private $menu:any;
   private layoutSub:Subscription;
   private routerSub:Subscription;
+  
 
   constructor(
     private menu:ElementRef,
     private router: Router,
-    public layoutService:LayoutService
+    public layoutService:LayoutService,
+    public showDataService: ShowDataService 
+    
   ) {
     this.$menu = $(this.menu.nativeElement);
   }
 
   ngOnInit() {
+    
 
     this.layoutSub = this.layoutService.subscribe((store)=> {
       this.processLayout(store)
@@ -51,6 +57,7 @@ export class SmartMenuDirective implements OnInit, AfterContentInit {
 
   private togglersBinded = false;
   ngAfterContentInit() {
+    
     if(!this.togglersBinded){
       this.$menu.find('li:has(> ul)').each((i, li)=> {
         let $menuItem = $(li);

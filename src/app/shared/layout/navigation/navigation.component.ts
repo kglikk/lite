@@ -1,6 +1,11 @@
-import { AuthService } from './../../../services/auth.service';
+import { Observable } from 'rxjs/Observable';
+
+
+import { AuthService } from './../../../services/auth/auth.service';
 import {Component, OnInit} from '@angular/core';
-import {LoginInfoComponent} from "../../user/login-info/login-info.component";
+
+
+
 
 
 @Component({
@@ -10,10 +15,18 @@ import {LoginInfoComponent} from "../../user/login-info/login-info.component";
 })
 export class NavigationComponent implements OnInit {
 
+  showinnavigation: boolean;
+
   constructor(private auth: AuthService) {
+    //this.showData.currentShow = Observable.of(false);
+    //this.showData.show.next(false); 
+  
   }
 
   ngOnInit() {
+    
+   
   }
+  
 
 }

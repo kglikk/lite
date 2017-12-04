@@ -1,5 +1,4 @@
-
-
+import { ShowDataService } from './services/show-data.service';
 
 import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -24,8 +23,15 @@ import {SmartadminLayoutModule} from "./shared/layout/layout.module";
 
 import { CallbackComponent } from './callback/callback.component';
 
-import { AuthService } from './services/auth.service';
-import { AuthGuard } from './services/auth-guard.service';
+
+import { AuthService } from './services/auth/auth.service';
+import { AuthGuard } from './services/auth/auth-guard.service';
+
+
+
+import { ProjectService } from 'app/services/project.service';
+
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 // Application wide providers
@@ -47,7 +53,10 @@ type StoreType = {
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
-   CallbackComponent
+   CallbackComponent,
+   
+   
+   
 
   ],
   imports: [ // import Angular's modules
@@ -61,13 +70,17 @@ type StoreType = {
 
 
 
-    routing
+    routing,
+
+    ModalModule.forRoot(),
   ],
   exports: [
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     AuthService,
     AuthGuard,
+    ProjectService,
+    ShowDataService,
     // ENV_PROVIDERS,
     APP_PROVIDERS,
     

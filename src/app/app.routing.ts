@@ -1,4 +1,4 @@
-
+import { AuthGuard } from './services/auth/auth-guard.service';
 
 /**
  * Created by griga on 7/11/16.
@@ -11,7 +11,7 @@ import {AuthLayoutComponent} from "./shared/layout/app-layouts/auth-layout.compo
 import {ModuleWithProviders} from "@angular/core";
 
 import { CallbackComponent } from './callback/callback.component';
-import { AuthGuard } from './services/auth-guard.service';
+
 
 
 export const routes: Routes = [
@@ -61,4 +61,4 @@ export const routes: Routes = [
     
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(routes, {useHash: false, enableTracing: true }); //  zmieniłem useHash na false, enabletracing tylko do debugowania
+export const routing: ModuleWithProviders = RouterModule.forRoot(routes, {useHash: false, enableTracing: false }); //  zmieniłem useHash na false, enabletracing tylko do debugowania

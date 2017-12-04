@@ -1,7 +1,9 @@
 <aside id="left-panel">
 
   <!-- User info -->
+  <!--
   <sa-login-info></sa-login-info>
+  -->
   <!-- end user info -->
 
   <nav>
@@ -12,16 +14,23 @@
 
     <ul saSmartMenu>
 
-      <li routerLinkActive="active" >
+      <li routerLinkActive="active">
         <a routerLink="/home" title="Home">
-          <i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">{{'Home' | i18n}}</span></a>
+          <i class="fa fa-lg fa-fw fa-home"></i>
+          <span class="menu-item-parent">{{'Home' | i18n}}</span>
+        </a>
       </li>
 
+
+
+
       <li *ngIf="auth.isAuthenticated()">
-        <a href=""><i class="fa fa-lg fa-fw fa-table"></i> <span
-          class="menu-item-parent">{{'Data' | i18n}}</span></a>
+        <a href="">
+          <i class="fa fa-lg fa-fw fa-table"></i>
+          <span class="menu-item-parent">{{'Data' | i18n}}</span>
+        </a>
         <ul>
-          <li routerLinkActive="active"  >
+          <li routerLinkActive="active">
             <a routerLink="/data/externalgrids">{{'External Grids' | i18n}}</a>
           </li>
           <li routerLinkActive="active">
@@ -30,17 +39,19 @@
           <li routerLinkActive="active">
             <a routerLink="/data/twophasetransformers">Two Phase Transformers</a>
           </li>
-          
+
         </ul>
       </li>
 
       <li *ngIf="auth.isAuthenticated()">
-        <a href=""><i class="fa fa-lg fa-fw fa-table"></i> <span
-          class="menu-item-parent" >{{'Calculation' | i18n}}</span></a>
+        <a href="">
+          <i class="fa fa-lg fa-fw fa-table"></i>
+          <span class="menu-item-parent">{{'Calculation' | i18n}}</span>
+        </a>
         <ul>
           <li routerLinkActive="active">
             <a routerLink="/calculation/loadflow">{{'Load Flow' | i18n}}</a>
-          </li> 
+          </li>
         </ul>
       </li>
 

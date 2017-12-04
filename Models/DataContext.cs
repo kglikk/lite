@@ -23,12 +23,15 @@ namespace lite.Models
         public DbSet<OverheadLine> OverheadLines { get; set; }
         public DbSet<TwoPhaseTransformer> TwoPhaseTransformers { get; set; }
 
+        public DbSet<Project> Projects { get; set; }
+
         //zamiania z nazwy mnogiej na pojedynczą w bazie
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ExternalGrid>().ToTable("ExternalGrid");
             modelBuilder.Entity<OverheadLine>().ToTable("OverheadLine");
             modelBuilder.Entity<TwoPhaseTransformer>().ToTable("TwoPhaseTransformer");
+            modelBuilder.Entity<Project>().ToTable("Project");
         }
     }
 }

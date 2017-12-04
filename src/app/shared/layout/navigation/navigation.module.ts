@@ -11,6 +11,8 @@ import {NavigationComponent} from "./navigation.component";
 import {SmartMenuDirective} from "./smart-menu.directive";
 import {UserModule} from "../../user/user.module";
 import {RouterModule} from "@angular/router";
+import { ShowDataService } from "app/services/show-data.service";
+
 // import {ChatModule} from "../../chat/chat.module";
 
 
@@ -33,6 +35,10 @@ import {RouterModule} from "@angular/router";
     MinifyMenuComponent,
     NavigationComponent,
     SmartMenuDirective,
+  ],
+  providers: [
+    
+    
   ]
 })
 export class NavigationModule{}
