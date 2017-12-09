@@ -20,6 +20,8 @@ namespace lite
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
+                .UseSetting("detailedErrors", "true") //usuń w produkcji
+                .CaptureStartupErrors(true) //usuń w produkcji
                 .Build();
     }
 }
