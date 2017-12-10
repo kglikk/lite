@@ -71,8 +71,8 @@ namespace lite
             app.UseDirectoryBrowser(new DirectoryBrowserOptions() //powinny być wykasowane w produkcji
             {
                 FileProvider = new PhysicalFileProvider(
-            Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot")),
-                RequestPath = new PathString("/Webroot")
+            Path.Combine(Directory.GetCurrentDirectory(), @"/")),
+                RequestPath = new PathString("/webroot")
             });
 
 
