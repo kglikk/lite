@@ -87,7 +87,7 @@ module.exports = {
     ]
   },
   "output": {
-    "path": path.join(process.cwd(), "wwwroot"), //path: The output directory as an absolute path (required); process.cwd: method returns the current working directory of the Node.js process.
+    "path": path.join(process.cwd(), ""), // było (process.cwd(), "wwwroot"), path: The output directory as an absolute path (required); process.cwd: method returns the current working directory of the Node.js process.
     "publicPath": "/wwwroot/", //było wwwroot/ // Webpack dev middleware, if enabled, handles requests for this URL prefix
     "filename": "[name].bundle.js",
     "chunkFilename": "[id].chunk.js"
