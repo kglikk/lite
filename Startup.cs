@@ -14,6 +14,7 @@ using Microsoft.EntityFrameworkCore;
 using lite.Models;
 using System.IO;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.FileProviders;
 
 namespace lite
 {
@@ -32,6 +33,7 @@ namespace lite
             // Add framework services.
             services.AddDbContext<DataContext>(options =>options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc();
+            services.AddDirectoryBrowser(); //wykasuj do produkcji
 
             // 1. Add Authentication Services
             services.AddAuthentication(options =>
@@ -65,6 +67,15 @@ namespace lite
             */
             
             app.UseStaticFiles();
+            app.UseDeveloperExceptionPage(); //powinny być wykasowane w produkcji
+            app.UseDirectoryBrowser(new DirectoryBrowserOptions() //powinny być wykasowane w produkcji
+            {
+                FileProvider = new PhysicalFileProvider(
+            Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot")),
+                RequestPath = new PathString("/Webroot")
+            });
+
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
