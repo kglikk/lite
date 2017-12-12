@@ -79,8 +79,12 @@ namespace lite
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                
-                /*
+                app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
+                {
+                    HotModuleReplacement = true,
+                    HotModuleReplacementEndpoint = "/dist/__webpack_hmr"
+                });
+                /* tak było z local
                  
                 app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
                 {
