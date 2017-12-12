@@ -80,11 +80,13 @@ namespace lite
             {
                 app.UseDeveloperExceptionPage();
                 
-                
+                /*
+                 
                 app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
                 {
                     HotModuleReplacement = true
                 });
+                */
                  
             }
               // 2. Enable authentication middleware
