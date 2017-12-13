@@ -442,6 +442,8 @@ module.exports = {
     "setImmediate": false
   },
   "devServer": {
-    "historyApiFallback": true
+    "historyApiFallback": true,
+    "hot": false, // dodałem
+    "inline": false // dodałem
   }
 };
