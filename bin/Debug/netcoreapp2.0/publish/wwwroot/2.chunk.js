@@ -1,12 +1,12 @@
 webpackJsonp([2],{
 
-/***/ "./src/app/+data/externalgrids/externalgrids-routing.module.ts":
+/***/ "../../../../../src/app/+data/externalgrids/externalgrids-routing.module.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_app_data_externalgrids_externalgrids_component__ = __webpack_require__("./src/app/+data/externalgrids/externalgrids.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_app_data_externalgrids_externalgrids_component__ = __webpack_require__("../../../../../src/app/+data/externalgrids/externalgrids.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ExternalGridsRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -37,22 +37,22 @@ var ExternalGridsRoutingModule = (function () {
 
 /***/ }),
 
-/***/ "./src/app/+data/externalgrids/externalgrids.component.html":
+/***/ "../../../../../src/app/+data/externalgrids/externalgrids.component.html":
 /***/ (function(module, exports) {
 
 module.exports = "<!-- MAIN CONTENT -->\n<div *ngIf=\"show;else otherContent\" id=\"content\">\n\n  <div class=\"row\">\n    <sa-big-breadcrumbs [items]=\"['Data', 'External Grids']\" icon=\"table\" class=\"col-xs-12 col-sm-7 col-md-7 col-lg-4\"></sa-big-breadcrumbs>\n    <!-- <sa-stats></sa-stats> -->\n  </div>\n  <div class=\"row\">\n    <div class='col-sm-12' style=\"margin-top: 10px; margin-bottom: 10px\">\n        <button type=\"button\" class=\"btn btn-primary\" (click)=onAddRow()>Add Row</button>\n        <button type=\"button\" class=\"btn btn-danger\" (click)=removeSelected()>Delete selected</button>\n    </div>\n  </div>\n\n  <!-- widget grid -->\n  <sa-widgets-grid>\n\n\n    <div class=\"row\">\n      <article class=\"col-sm-12\">\n        <sa-widget [editbutton]=\"false\" color=\"darken\">\n          <header>\n            <span class=\"widget-icon\">\n              <i class=\"fa fa-table\"></i>\n            </span>\n\n            <h2>External Grids</h2>\n          </header>\n          <div>\n            <div class=\"widget-body no-padding\">\n              <!-- <alert type=\"info\" class=\"no-margin fade in\" dismisser=\"\"> \n                <i class=\"fa-fw fa fa-info\"></i>\n                Adds zebra-striping to table row within <code>&lt;table&gt;</code> by adding the <code>.table-striped</code>\n                with the base class\n              </alert>\n              -->\n              <div class=\"table-responsive\" style=\"width: 100%; height: 500px;\">\n                  <ag-grid-angular #agGrid style=\"width: 100%;height: 100%;\" class=\"ag-fresh\" [gridOptions]=\"gridOptions\" [rowData]=\"rowData\"> \n                    <!--  [columnDefs]=\"columnDefs\" [defaultColDef]=\"defaultColDef\" -->\n              </ag-grid-angular>\n\n               \n\n              </div>\n\n            </div>\n          </div>\n        </sa-widget>\n\n      </article>\n\n\n    </div>\n  \n  </sa-widgets-grid>\n</div>\n\n<ng-template #otherContent>Please open or create project in the Home tab first</ng-template>"
 
 /***/ }),
 
-/***/ "./src/app/+data/externalgrids/externalgrids.component.ts":
+/***/ "../../../../../src/app/+data/externalgrids/externalgrids.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_project_service__ = __webpack_require__("./src/app/services/project.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_app_services_show_data_service__ = __webpack_require__("./src/app/services/show-data.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_animations_fade_in_top_decorator__ = __webpack_require__("./src/app/shared/animations/fade-in-top.decorator.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__("./node_modules/@angular/http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_project_service__ = __webpack_require__("../../../../../src/app/services/project.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_app_services_show_data_service__ = __webpack_require__("../../../../../src/app/services/show-data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_animations_fade_in_top_decorator__ = __webpack_require__("../../../../../src/app/shared/animations/fade-in-top.decorator.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ExternalGridsComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -268,7 +268,7 @@ var ExternalGridsComponent = (function () {
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__shared_animations_fade_in_top_decorator__["a" /* FadeInTop */])(),
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
             //selector: 'sa-external-grids',
-            template: __webpack_require__("./src/app/+data/externalgrids/externalgrids.component.html"),
+            template: __webpack_require__("../../../../../src/app/+data/externalgrids/externalgrids.component.html"),
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_app_services_show_data_service__["a" /* ShowDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_app_services_show_data_service__["a" /* ShowDataService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__services_project_service__["a" /* ProjectService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_project_service__["a" /* ProjectService */]) === "function" && _c || Object])
     ], ExternalGridsComponent);
@@ -280,18 +280,18 @@ var ExternalGridsComponent = (function () {
 
 /***/ }),
 
-/***/ "./src/app/+data/externalgrids/externalgrids.module.ts":
+/***/ "../../../../../src/app/+data/externalgrids/externalgrids.module.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("./node_modules/@angular/common/@angular/common.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__("./node_modules/@angular/http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__externalgrids_routing_module__ = __webpack_require__("./src/app/+data/externalgrids/externalgrids-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_app_data_externalgrids_externalgrids_component__ = __webpack_require__("./src/app/+data/externalgrids/externalgrids.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_app_shared_smartadmin_module__ = __webpack_require__("./src/app/shared/smartadmin.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ag_grid_angular_main__ = __webpack_require__("./node_modules/ag-grid-angular/main.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__externalgrids_routing_module__ = __webpack_require__("../../../../../src/app/+data/externalgrids/externalgrids-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_app_data_externalgrids_externalgrids_component__ = __webpack_require__("../../../../../src/app/+data/externalgrids/externalgrids.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_app_shared_smartadmin_module__ = __webpack_require__("../../../../../src/app/shared/smartadmin.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ag_grid_angular_main__ = __webpack_require__("../../../../ag-grid-angular/main.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ag_grid_angular_main___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_ag_grid_angular_main__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExternalGridsModule", function() { return ExternalGridsModule; });
 /* harmony export (immutable) */ __webpack_exports__["getBaseUrl"] = getBaseUrl;
@@ -338,7 +338,7 @@ function getBaseUrl() {
 
 /***/ }),
 
-/***/ "./src/app/shared/animations/fade-in-top.decorator.ts":
+/***/ "../../../../../src/app/shared/animations/fade-in-top.decorator.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

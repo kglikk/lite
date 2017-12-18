@@ -1,9 +1,9 @@
 webpackJsonp([1],{
 
-/***/ "./src/app/+home/home.component.css":
+/***/ "../../../../../src/app/+home/home.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
 // imports
 
 
@@ -18,20 +18,20 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ "./src/app/+home/home.component.html":
+/***/ "../../../../../src/app/+home/home.component.html":
 /***/ (function(module, exports) {
 
 module.exports = "<div id=\"content\">\n    <div class=\"row\">\n        <sa-big-breadcrumbs [items]=\"['Home']\" icon=\"home\" class=\"col-xs-12 col-sm-7 col-md-7 col-lg-4\"></sa-big-breadcrumbs>\n    </div>\n    <div class=\"row\">\n        <div class=\"col-sm-12\">\n            \n               \n            \n            <div class=\"well\">\n\n                <h1>Electrisim</h1>\n                <p>Calculation of load-flow for electrical systems.</p>\n            </div>\n            <!-- <button type=\"button\" class=\"btn btn-primary\"  style=\"margin-left: 14px; margin-top:8px\" data-toggle=\"modal\" data-target=\"#myModal\" (click)=\"createProject()\" *ngIf=\"auth.isAuthenticated()\" > Create New Project </button> -->\n            <!-- <button type=\"button\" class=\"btn btn-primary\"  style=\"margin-left: 14px; margin-top:8px\" *ngIf=\"auth.isAuthenticated()\" (click)=\"openProject()\" > Open Project </button> -->\n            \n            <app-create-project-form *ngIf=\"auth.isAuthenticated()\"></app-create-project-form>\n            <app-open-project-form *ngIf=\"auth.isAuthenticated()\"></app-open-project-form>\n            \n            \n\n           \n            \n            <!--\n            <sa-tree-view></sa-tree-view>\n            -->\n\n            <!-- lista rozwijana -->\n             <!-- widget options:\n                usage: <sa-widget id=\"wid-id-0\" [editbutton]=\"false\">\n                [colorbutton]=\"false\"\n                [editbutton]=\"false\"\n                [togglebutton]=\"false\"\n                [deletebutton]=\"false\"\n                [fullscreenbutton]=\"false\"\n                [custombutton]=\"false\"\n                [collapsed]=\"true\"\n                [sortable]=\"false\"\n                -->\n            <!-- \n            <sa-widget [editbutton]=\"false\" color=\"blue\">\n               \n                <header>\n                    <span class=\"widget-icon\">\n                        <i class=\"fa fa-sitemap\"></i>\n                    </span>\n                    <h2>Projects</h2>\n                </header>\n                 widget div\n                <div>\n                     widget content \n                    <div class=\"widget-body\">\n                        <div class=\"tree smart-form\">\n                            <sa-tree-view [items]=\"demo2\" (change)=\"changeLstener($event)\"></sa-tree-view>\n                        </div>\n                    </div>\n                     end widget content \n                </div>\n                 end widget div -\n            </sa-widget>\n             end widget -->\n\n\n\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
-/***/ "./src/app/+home/home.component.ts":
+/***/ "../../../../../src/app/+home/home.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_auth_auth_service__ = __webpack_require__("./src/app/services/auth/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__core_api_json_api_service__ = __webpack_require__("./src/app/core/api/json-api.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_auth_auth_service__ = __webpack_require__("../../../../../src/app/services/auth/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__core_api_json_api_service__ = __webpack_require__("../../../../../src/app/core/api/json-api.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -60,8 +60,8 @@ var HomeComponent = (function () {
     HomeComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
             selector: 'app-home',
-            template: __webpack_require__("./src/app/+home/home.component.html"),
-            styles: [__webpack_require__("./src/app/+home/home.component.css")]
+            template: __webpack_require__("../../../../../src/app/+home/home.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/+home/home.component.css")]
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__core_api_json_api_service__["a" /* JsonApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__core_api_json_api_service__["a" /* JsonApiService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__services_auth_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_auth_auth_service__["a" /* AuthService */]) === "function" && _b || Object])
     ], HomeComponent);
@@ -73,19 +73,19 @@ var HomeComponent = (function () {
 
 /***/ }),
 
-/***/ "./src/app/+home/home.module.ts":
+/***/ "../../../../../src/app/+home/home.module.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_create_project_form_create_project_form_component__ = __webpack_require__("./src/app/components/create-project-form/create-project-form.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_open_project_form_open_project_form_component__ = __webpack_require__("./src/app/components/open-project-form/open-project-form.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_ui_tree_view_tree_view_component__ = __webpack_require__("./src/app/shared/ui/tree-view/tree-view.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common__ = __webpack_require__("./node_modules/@angular/common/@angular/common.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_routing__ = __webpack_require__("./src/app/+home/home.routing.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_smartadmin_module__ = __webpack_require__("./src/app/shared/smartadmin.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__home_component__ = __webpack_require__("./src/app/+home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_create_project_form_create_project_form_component__ = __webpack_require__("../../../../../src/app/components/create-project-form/create-project-form.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_open_project_form_open_project_form_component__ = __webpack_require__("../../../../../src/app/components/open-project-form/open-project-form.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_ui_tree_view_tree_view_component__ = __webpack_require__("../../../../../src/app/shared/ui/tree-view/tree-view.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_routing__ = __webpack_require__("../../../../../src/app/+home/home.routing.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_smartadmin_module__ = __webpack_require__("../../../../../src/app/shared/smartadmin.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__home_component__ = __webpack_require__("../../../../../src/app/+home/home.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeModule", function() { return HomeModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -123,12 +123,12 @@ var HomeModule = (function () {
 
 /***/ }),
 
-/***/ "./src/app/+home/home.routing.ts":
+/***/ "../../../../../src/app/+home/home.routing.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home_component__ = __webpack_require__("./src/app/+home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home_component__ = __webpack_require__("../../../../../src/app/+home/home.component.ts");
 /* unused harmony export homeRoutes */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return homeRouting; });
 //import { CallbackComponent } from './../callback/callback.component';
@@ -148,10 +148,10 @@ var homeRouting = __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterMod
 
 /***/ }),
 
-/***/ "./src/app/components/create-project-form/create-project-form.component.css":
+/***/ "../../../../../src/app/components/create-project-form/create-project-form.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
 // imports
 
 
@@ -166,23 +166,23 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ "./src/app/components/create-project-form/create-project-form.component.html":
+/***/ "../../../../../src/app/components/create-project-form/create-project-form.component.html":
 /***/ (function(module, exports) {
 
 module.exports = "<button type=\"button\" class=\"btn btn-primary\" (click)=\"openModal(template)\">Create Project</button>\n\n<ng-template #template>\n    <div class=\"modal-header\">\n        <h4 class=\"modal-title pull-left\">Create Project</h4>\n        <button type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"modalRef.hide()\">\n            <span aria-hidden=\"true\">&times;</span>\n        </button>\n    </div>\n    <div class=\"modal-body\">\n        <div class=\"form-group\">\n\n            <div class=\"\">\n                <input [(ngModel)]=\"newProjectName\" type=\"text\" class=\"form-control\" id=\"projectName\" placeholder=\"New Project Name\" />\n            </div>\n        </div>\n\n    </div>\n\n    <div class=\"modal-footer\">\n        <button type=\"button\" class=\"btn btn-default\" (click)=\"modalRef.hide()\">Close</button>\n        <button type=\"button\" class=\"btn btn-primary\" (click)=\"createProject()\">Save</button>\n    </div>\n</ng-template>\n\n\n<!--\n<button type=\"button\" class=\"btn btn-primary\"  style=\"margin-left: 14px; margin-top:8px\" data-toggle=\"modal\" data-target=\"#createProject\"  *ngIf=\"auth.isAuthenticated()\" > Create New Project </button>\n\n<div class=\"modal fade\" id=\"createProject\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"createProjectLabel\" aria-hidden=\"true\">\n    <div class=\"modal-dialog\">\n        <div class=\"modal-content\">\n            <div class=\"modal-header\">\n                <button type=\"button\" class=\"close\" data-dismiss=\"modal\">\n                    <span aria-hidden=\"true\">&times;</span>\n                    <span class=\"sr-only\">Close</span>\n                </button>\n                <h4 class=\"modal-title\" id=\"createProjectLabel\">Create New Project</h4>\n            </div>\n            <div class=\"modal-body\">\n            \n                <div class=\"form-group\">\n                   \n                    <div class=\"\">\n                        <input [(ngModel)]=\"newProjectName\" type=\"text\" class=\"form-control\" id=\"projectName\" placeholder=\"New Project Name\"   \n                        />\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n                <button type=\"button\" class=\"btn btn-primary\" data-dismiss=\"modal\" (click)=\"createProject()\">Save</button>\n            </div>\n        </div>\n    </div>\n</div>\n-->"
 
 /***/ }),
 
-/***/ "./src/app/components/create-project-form/create-project-form.component.ts":
+/***/ "../../../../../src/app/components/create-project-form/create-project-form.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_show_data_service__ = __webpack_require__("./src/app/services/show-data.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_project_service__ = __webpack_require__("./src/app/services/project.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__("./node_modules/@angular/http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_app_services_auth_auth_service__ = __webpack_require__("./src/app/services/auth/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ngx_bootstrap_modal__ = __webpack_require__("./node_modules/ngx-bootstrap/modal/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_show_data_service__ = __webpack_require__("../../../../../src/app/services/show-data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_project_service__ = __webpack_require__("../../../../../src/app/services/project.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_app_services_auth_auth_service__ = __webpack_require__("../../../../../src/app/services/auth/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ngx_bootstrap_modal__ = __webpack_require__("../../../../ngx-bootstrap/modal/index.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreateProjectFormComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -238,8 +238,8 @@ var CreateProjectFormComponent = (function () {
     CreateProjectFormComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
             selector: 'app-create-project-form',
-            template: __webpack_require__("./src/app/components/create-project-form/create-project-form.component.html"),
-            styles: [__webpack_require__("./src/app/components/create-project-form/create-project-form.component.css")]
+            template: __webpack_require__("../../../../../src/app/components/create-project-form/create-project-form.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/components/create-project-form/create-project-form.component.css")]
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4_app_services_auth_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_app_services_auth_auth_service__["a" /* AuthService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_project_service__["a" /* ProjectService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_project_service__["a" /* ProjectService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__services_show_data_service__["a" /* ShowDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_show_data_service__["a" /* ShowDataService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5_ngx_bootstrap_modal__["b" /* BsModalService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ngx_bootstrap_modal__["b" /* BsModalService */]) === "function" && _e || Object])
     ], CreateProjectFormComponent);
@@ -251,10 +251,10 @@ var CreateProjectFormComponent = (function () {
 
 /***/ }),
 
-/***/ "./src/app/components/open-project-form/open-project-form.component.css":
+/***/ "../../../../../src/app/components/open-project-form/open-project-form.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
 // imports
 
 
@@ -269,22 +269,22 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ "./src/app/components/open-project-form/open-project-form.component.html":
+/***/ "../../../../../src/app/components/open-project-form/open-project-form.component.html":
 /***/ (function(module, exports) {
 
 module.exports = "<button type=\"button\" class=\"btn btn-primary\" (click)=\"openModal(template)\">Open Project</button>\n\n<ng-template #template>\n  <div class=\"modal-header\">\n    <h4 class=\"modal-title pull-left\">Open Project</h4>\n    <button type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"modalRef.hide()\">\n      <span aria-hidden=\"true\">&times;</span>\n    </button>\n  </div>\n  <div class=\"modal-body\">\n    \n    <select id=\"openProject\" class=\"form-control\" [(ngModel)]=\"openedProject.project\" name=\"project_id\">\n      <option value=\"\"></option>\n      <option *ngFor=\"let p of projects\" value=\"{{p.id}}\">{{p.name}}</option>\n    </select>\n  </div>\n\n  <div class=\"modal-footer\">\n    <button type=\"button\" class=\"btn btn-default\" (click)=\"modalRef.hide()\">Close</button>\n    <button type=\"button\" class=\"btn btn-primary\" (click)=\"openProject()\">Open</button>\n  </div>\n</ng-template>"
 
 /***/ }),
 
-/***/ "./src/app/components/open-project-form/open-project-form.component.ts":
+/***/ "../../../../../src/app/components/open-project-form/open-project-form.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_show_data_service__ = __webpack_require__("./src/app/services/show-data.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_project_service__ = __webpack_require__("./src/app/services/project.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_app_services_auth_auth_service__ = __webpack_require__("./src/app/services/auth/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ngx_bootstrap_modal__ = __webpack_require__("./node_modules/ngx-bootstrap/modal/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_show_data_service__ = __webpack_require__("../../../../../src/app/services/show-data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_project_service__ = __webpack_require__("../../../../../src/app/services/project.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_app_services_auth_auth_service__ = __webpack_require__("../../../../../src/app/services/auth/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ngx_bootstrap_modal__ = __webpack_require__("../../../../ngx-bootstrap/modal/index.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OpenProjectFormComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -342,8 +342,8 @@ var OpenProjectFormComponent = (function () {
     OpenProjectFormComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
             selector: 'app-open-project-form',
-            template: __webpack_require__("./src/app/components/open-project-form/open-project-form.component.html"),
-            styles: [__webpack_require__("./src/app/components/open-project-form/open-project-form.component.css")]
+            template: __webpack_require__("../../../../../src/app/components/open-project-form/open-project-form.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/components/open-project-form/open-project-form.component.css")]
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_project_service__["a" /* ProjectService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_project_service__["a" /* ProjectService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_app_services_auth_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_app_services_auth_auth_service__["a" /* AuthService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4_ngx_bootstrap_modal__["b" /* BsModalService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_ngx_bootstrap_modal__["b" /* BsModalService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__services_show_data_service__["a" /* ShowDataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_show_data_service__["a" /* ShowDataService */]) === "function" && _d || Object])
     ], OpenProjectFormComponent);
@@ -355,11 +355,11 @@ var OpenProjectFormComponent = (function () {
 
 /***/ }),
 
-/***/ "./src/app/shared/ui/tree-view/tree-view.component.ts":
+/***/ "../../../../../src/app/shared/ui/tree-view/tree-view.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TreeViewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;

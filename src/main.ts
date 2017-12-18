@@ -12,9 +12,10 @@ import { AppModule } from './app/app.module';
 var module:any;
 
 //dodałem - uwzglednnij Hot Module Replacement
+/*
 if (module.hot) {
   module.hot.accept();
-}
+}*/
 
 if (environment.production) {
   enableProdMode();
