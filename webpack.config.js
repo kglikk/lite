@@ -58,6 +58,11 @@ const postcssPlugins = function () {
 
 
 module.exports = {
+  "externals": {
+    "xmlhttprequest": '{XMLHttpRequest:XMLHttpRequest}'
+  },
+    
+  
   "resolve": {
     "extensions": [
       ".ts",
