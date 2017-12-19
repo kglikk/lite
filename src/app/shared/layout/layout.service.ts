@@ -204,7 +204,7 @@ export class LayoutService {
     let $body = $('body');
     $body.removeClass(state.skins.map((it)=>(it.name)).join(' '));
     $body.addClass(state.skin.name);
-    console.log(state.skin.name);
+    
     
     $("#logo img").attr('src', state.skin.logo);
 
